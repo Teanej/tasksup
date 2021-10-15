@@ -1,0 +1,4 @@
+<div class="entry"><div class="name">Goody Armin:</div><div class="content"><span class="message"><a href="http://localhost/TasksUp/blog.php?blog-content=%3Cp%3ESomme+cco%3C%2Fp%3E%0D%0A" target="_blank">http://localhost/TasksUp/blog.php?blog-content=%3Cp%3ESomme+cco%3C%2Fp%3E%0D%0A</a>                 Hello guys </span><span class="time">18:00, 5. October 2021 </span></div></div>
+<div class="entry"><div class="name">Teanej:</div><div class="content"><span class="message"><a href="http://localhost/TasksUp/blog.php?blog-content=%3Cp%3ESOME+TEXT.%3C%2Fp%3E%0D%0A" target="_blank">http://localhost/TasksUp/blog.php?blog-content=%3Cp%3ESOME+TEXT.%3C%2Fp%3E%0D%0A</a>           This is my blog </span><span class="time">14:48, 9. October 2021 </span></div></div>
+<div class="entry"><div class="name">Teanej:</div><div class="content"><span class="message"><b>@Goody_Armin</b> Really good blog. </span><span class="time">14:49, 9. October 2021 </span></div></div>
+

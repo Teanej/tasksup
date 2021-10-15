@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TasksUp</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+      * {
+        box-sizing: border-box;
+        font-family: "Raleway";
+        outline: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        text-align: center;
+        transition: 0.3s;
+        background: whitesmoke;
+      }
+
+      header:hover {
+        border-radius: 200px;
+        background: black;
+        color: white;
+      }
+
+      section {
+        text-align: center;
+        transition: 0.3s;
+        background: black;
+        color: white;
+      }
+
+      section:hover {
+        border-radius: 200px;
+        background: silver;
+        color: black;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        background: seagreen;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+        transition: 0.3s;
+      }
+
+      a:hover {
+        padding: 5px 5px 5px 5px;
+      }
+
+      a:active {
+        opacity: 0.5;
+      }
+
+      p {
+        transition: 0.3s;
+      }
+
+      p:hover {
+        font-style: italic;
+      }
+
+      h2 {
+        transition: 0.3s;
+      }
+
+      h2:hover {
+        width: 500px;
+        margin: auto;
+        border: 1.5px solid lightgrey;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+        background: white;
+        color: black;
+      }
+
+      button {
+        text-decoration: none;
+        color: white;
+        background: royalblue;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+        transition: 0.3s;
+        text-align: center;
+      }
+
+      button:hover {
+        padding: 5px 5px 5px 5px;
+      }
+
+      button:active {
+        opacity: 0.5;
+      }
+      input,
+      textarea {
+        padding: 10px 10px 10px 10px;
+        border: none;
+        border-radius: 25px;
+        transition: 0.3s;
+        resize: none;
+      }
+      input:hover {
+        opacity: 0.8;
+      }
+      textarea:hover {
+        opacity: 0.8;
+      }
+      input:focus {
+        border: 1.5px solid grey;
+      }
+      textarea:focus {
+        border: 1.5px solid grey;
+      }
+      footer {
+        text-align: center;
+        transition: 0.3s;
+      }
+      footer:hover {
+        background: black;
+        color: white;
+      }
+    </style>
+    <header>
+      <br />
+      <br />
+      <h2>TasksUp <img src="logo.png" width="26" height="26" /></h2>
+      <br />
+      <br />
+      <p>
+        Play, work, draw, record, call, search, todo, chat, help with other
+        people in TasksUp
+      </p>
+      <br />
+      <br />
+      <a href="signup_login.php">Start Now</a>
+      <br />
+      <br />
+    </header>
+    <hr />
+    <br />
+    <hr />
+    <section>
+      <br />
+      <br />
+      <h2>Contact if you have any issues!</h2>
+      <br />
+      <br />
+      <form
+        method="POST"
+        action="https://formsubmit.co/frljokimaster@gmail.com"
+        enctype="multipart/form-data"
+      >
+        <input type="email" name="email" placeholder="Your email" />
+        <br />
+        <br />
+        <textarea
+          name="message"
+          placeholder="Details of your problem"
+        ></textarea>
+        <br />
+        <br />
+        <input type="file" name="attachment" accept="image/png, image/jpeg" />
+        <br />
+        <br />
+        <button type="submit">Submit</button>
+        <input
+          type="hidden"
+          name="_next"
+          value="https://tasksup.io/thanks.html"
+        />
+      </form>
+      <br />
+      <br />
+      <p style="color: blue">Phone Number: 066 239 880</p>
+      <br />
+      <p style="color: blue">Email: frljokimaster@gmail.com</p>
+      <br />
+    </section>
+    <hr />
+    <br />
+    <hr />
+
+    <footer>
+      <br />
+      <a href="apps.php">Try apps.</a>
+      <br />
+      <br />
+      <hr />
+      <br />
+      <p>Copyright © 2021 by Teanej Urošević</p>
+      <br />
+      <br />
+    </footer>
+  </body>
+</html>

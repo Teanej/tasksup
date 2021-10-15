@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TasksUp</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        background: white;
+        background-size: contain;
+        transition: 0.3s;
+        background: white;
+        text-align: center;
+      }
+
+      * {
+        box-sizing: border-box;
+        font-family: "Raleway";
+        outline: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        text-align: center;
+        transition: 0.3s;
+        background: silver;
+        color: black;
+        padding: 50px 50px 50px 50px;
+        width: 700px;
+        margin: auto;
+      }
+
+      div:hover {
+        border-radius: 200px;
+        background: black;
+        color: white;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        background: seagreen;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+        transition: 0.3s;
+      }
+
+      a:hover {
+        padding: 5px 5px 5px 5px;
+      }
+
+      a:active {
+        opacity: 0.5;
+      }
+
+      p {
+        transition: 0.3s;
+      }
+
+      p:hover {
+        font-style: italic;
+      }
+
+      h2 {
+        transition: 0.3s;
+      }
+
+      h2:hover {
+        width: 500px;
+        margin: auto;
+        border: 1.5px solid lightgrey;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+        background: white;
+        color: black;
+      }
+
+      button {
+        text-decoration: none;
+        color: white;
+        background: royalblue;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 10px 10px 10px;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        padding: 5px 5px 5px 5px;
+      }
+
+      button:active {
+        opacity: 0.5;
+      }
+      input,
+      textarea {
+        padding: 10px 10px 10px 10px;
+        border: none;
+        border-radius: 25px;
+        transition: 0.3s;
+        resize: none;
+      }
+      input:hover {
+        opacity: 0.8;
+      }
+      textarea:hover {
+        opacity: 0.8;
+      }
+      input:focus {
+        border: 1.5px solid grey;
+      }
+    </style>
+  <form action="test.php" method="POST">
+
+    <div>
+      
+      <p>Username: <input id="result-username" type="text" name="user_user_username"/></p>
+      <br>
+    <form action="test.php" method="POST">
+
+      <p>Password: <input id="result-password" type="password" name="user_user_username2"/></p>
+    </form>  
+      <br>
+      
+      <p>Phone Number: <input id="result-number" type="password" name="user_user_number"/></p>
+      <br>
+      
+      <p>Refresh to reset all account data!</p>
+      <button type="submit">Go for a test!</button>
+    </div>
+  </form>
+    <br />
+    <br />
+    <p>Messages:</p>
+    <div id="box"></div>
+    <p>Enter a Message and Press Enter</p>
+    <div><input id="input" placeholder="Say something cool!" /></div>
+    
+    <script src=https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.min.js></script>
+    <script>
+      document.getElementById("result-username").value =
+      window.user_username_help_me_please;
+      document.getElementById("result-password").value =
+      window.user_password_help_me_please;
+      document.getElementById("result-number").value =
+        window.user_number_help_me_please;
+      (function() {
+        var pubnub = new PubNub({
+            publishKey: 'demo',
+            subscribeKey: 'demo'
+        });
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var box = $('box'),
+            input = $('input'),
+            channel = 'tasksup_quick_lobby_chat_channel';
+        pubnub.addListener({
+            message: function(obj) {
+                box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML
+            }
+        });
+        pubnub.subscribe({
+            channels: [channel]
+        });
+        input.addEventListener('keyup', function(e) {
+            if ((e.keyCode || e.charCode) === 13) {
+                pubnub.publish({
+                    channel: channel,
+                    message: document.getElementById("result-username").value + " : " + input.value,
+                    x: (input.value = '')
+                });
+            }
+        });
+        pubnub.fetchMessages(
+  {
+    channels: [channel],
+    end: '15343325004275466',
+    count: 25 // default/max is 25 messages for multiple channels (up to 500)
+  },
+  function(status, response) {
+    console.log(response)
+    for (let i = 0; i < response.channels.tasksup_quick_lobby_chat_channel.length; i++) {
+      box.append( response.channels.tasksup_quick_lobby_chat_channel[i].message, document.createElement("br"), document.createElement("br"));
+    }
+  }
+)
+    })();
+    </script>
+  </body>
+</html>
